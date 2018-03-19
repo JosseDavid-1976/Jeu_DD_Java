@@ -2,10 +2,16 @@ package jeu;
 
 public   class Guerrier extends Personnage {
 
-public  String Arme(){
+//    Guerrier (string nouveauNom){
+//        this.setNom(nouveauNom);
+//    }
+
+
+
+public  String arme(){
     return  "Hache";
 }
-public  boolean Bouclier(){
+public  boolean bouclier(){
     return true;
 }
 }

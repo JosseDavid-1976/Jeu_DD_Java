@@ -1,10 +1,10 @@
 package jeu;
 
 public    class Magicien extends Personnage {
-    public  String Sortilege(){
+    public  String sortilege(){
         return "Fire Ball";
     }
-    public   boolean Philtre(){
+    public   boolean philtre(){
         return true;
     }
 

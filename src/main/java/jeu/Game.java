@@ -13,16 +13,16 @@ public class Game {
             Guerrier guerrier = new Guerrier();
             System.out.println(guerrier.getNom());
             System.out.println("<----------------------->");
-            System.out.println(guerrier .Arme());
-            System.out.println(guerrier .Bouclier());
+            System.out.println(guerrier .arme());
+            System.out.println(guerrier .bouclier());
             System.out.println("<----------------------->");
         } else if (TypePersonnage.equals("Magicien")){
             System.out.println("<----------------------->");
             Magicien magicien = new Magicien();
             System.out.println(magicien.getNom());
             System.out.println("<----------------------->");
-            System.out.println(magicien .Sortilege());
-            System.out.println(magicien .Philtre());
+            System.out.println(magicien .sortilege());
+            System.out.println(magicien .philtre());
             System.out.println("<----------------------->");
         }else{
             System.out.println("<----------------------->");
