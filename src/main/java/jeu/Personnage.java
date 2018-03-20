@@ -1,10 +1,10 @@
 package jeu;
 
 public abstract class Personnage {
-    private String nom = "MonNom";
+    private String nom = "Inconnu";
     private String img = "url";
-    private int vie = 100;
-    private int attaque = 10;
+    private int vie = 0;
+    private int attaque = 0;
 
 
     public String getNom() {
@@ -38,4 +38,7 @@ public abstract class Personnage {
     public void setAttaque(int attaque) {
         this.attaque = attaque;
     }
+
+
+
 }
