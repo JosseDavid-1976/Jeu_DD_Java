@@ -10,6 +10,7 @@ public class Magicien extends Personnage {
 
     public boolean getPhiltre() {
         return this.philtre;
+
     }
 
     public void setSort(String sort) {
@@ -19,8 +20,9 @@ public class Magicien extends Personnage {
     public void setPhiltre(boolean philtre) {
         this.philtre = philtre;
     }
+
     public String toString() {
-        return "MAGICIEN : " + "\n" + super.toString() + "Sort : " + this.sort + "\n" + "Philtre : "+ this.philtre;
+        return "MAGICIEN : " + "\n" + super.toString() + "Sort : " + this.sort + "\n" + "Philtre : " + this.philtre;
     }
 }
 
