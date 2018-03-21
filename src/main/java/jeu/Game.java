@@ -2,23 +2,6 @@ package jeu;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-
-//public class Test {
-//
-//    public static void main(String[] args) {
-//
-//        ArrayList al = new ArrayList();
-//        al.add(12);
-//        al.add("Une chaîne de caractères !");
-//        al.add(12.20f);
-//        al.add('d');
-//
-//        for(int i = 0; i < al.size(); i++)
-//        {
-//            System.out.println("donnée à l'indice " + i + " = " + al.get(i));
-//        }
-//    }
-//}
 public class Game {
     private static Guerrier guerrier;
     private static Magicien magicien;
@@ -30,24 +13,20 @@ public class Game {
             System.out.println("Test de fonctionnement");
             System.out.println("<----------------------->");
             Scanner sc = new Scanner(System.in);
-            System.out.println("Que voulez vous faire:1- Créer un personnage 2- Afficher un personnage ou le modifier 3- Quitter ");
+            System.out.println("Que voulez vous faire:1- Créer un personnage 2- Afficher les personnages ou les modifier 3- Quitter ");
             String choixUtilisateur = sc.nextLine();
             if (choixUtilisateur.equals("1")) {
-                personnages.add(creePerso());
-//                creePerso();
+                personnages.add(creePerso());//stockage de mes personnages dans un tableau
             } else if (choixUtilisateur.equals("2")) {
-                System.out.println("Que voulez-vous faire maintenant : 1- Afficher Guerrier 2- Afficher Magicien 3- Modifier Guerrier 4- Modifier Magicien ");
+                System.out.println("Que voulez-vous faire maintenant : 1- Afficher les personnages 2- Afficher Magicien 3- Modifier Guerrier 4- Modifier Magicien ");
                 String ChoixPerso = sc.nextLine();
-                if (ChoixPerso.equals("1")) {//affichage guerrier construie
-//                    AfficheG();
-//                    System.out.println (personnages.get(0).getNom());
+                if (ChoixPerso.equals("1")) {//affichage des personnags
                     for(int i = 0; i < personnages.size(); i++)
         {
-            System.out.println("<-----------------> " + i + " = " + personnages.get(i).toString());
+            System.out.println("<-----------------> " + "\n" + i + " = " + personnages.get(i).toString());
         }
+                } else if (ChoixPerso.equals("2")) {
 
-                } else if (ChoixPerso.equals("2")) { // affichage magicien
-                    AfficheM();
                 } else if (ChoixPerso.equals("3")) { // modifier guerrier
                     ModifierPersoG();
                 } else if (ChoixPerso.equals("4")) {//modifier magicien
@@ -65,7 +44,6 @@ public class Game {
     ///////////////////////////////////////METHODE///////////////////////////////////////////////////////
         static Personnage creePerso () {
             Scanner sc = new Scanner(System.in);
-
             System.out.println("Que voulez vous faire:1- Guerrier 2- Magicien");
             String gOuM = sc.nextLine();
             if (gOuM.equals("1")) {/////////////// creation du guerrier
@@ -130,35 +108,7 @@ public class Game {
                 }
                 return new Guerrier();
         }
-//        static void AfficheG () { /////////////////////////affichage guerrier construie
-//            System.out.println("<----------------------->");
-//            System.out.println("Nom du Guerrier :" + guerrier.getNom());
-//            System.out.println("<----------------------->");
-//            System.out.println("A quoi ressemble ton Guerrier :" + guerrier.getImg());
-//            System.out.println("<----------------------->");
-//            System.out.println("Niveau de Vie du Guerrier :" + guerrier.getVie());
-//            System.out.println("<----------------------->");
-//            System.out.println("Force de l'attaque de votre Guerrier  :" + guerrier.getAttaque());
-//            System.out.println("<----------------------->");
-//            System.out.println("Arme de votre Guerrier  :" + guerrier.getArme());
-//            System.out.println("<----------------------->");
-//            System.out.println("Guerrier équipé d'un bouclier :" + guerrier.getBouclier());
-//            System.out.println("<----------------------->");
-//        }
-        static void AfficheM () {///////////////// affichage magicien
-            System.out.println("<----------------------->");
-            System.out.println("Nom du Magicien :" + magicien.getNom());
-            System.out.println("<----------------------->");
-            System.out.println("A quoi ressemble ton Magicien :" + magicien.getImg());
-            System.out.println("<----------------------->");
-            System.out.println("Niveau de Vie : " + magicien.getVie());
-            System.out.println("<----------------------->");
-            System.out.println("Force de l'attaque : " + magicien.getAttaque());
-            System.out.println("<----------------------->");
-            System.out.println("Sort : " + magicien.getSort());
-            System.out.println("Philtre : " + magicien.getPhiltre());
-            System.out.println("<----------------------->");
-        }
+
         static void ModifierPersoG () {//////////////////////modifier guerrier
             Scanner sc = new Scanner(System.in);
             boolean modifierPerso = true;

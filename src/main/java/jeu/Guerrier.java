@@ -20,6 +20,6 @@ public class Guerrier extends Personnage {
         this.bouclier = bouclier;
     }
     public String toString() {
-        return super.toString() + "Arme : " + this.arme + "\n" + "Bouclier : "+ this.bouclier;
+        return "GUERRIER : " + "\n" + super.toString() + "Arme : " + this.arme + "\n" + "Bouclier : "+ this.bouclier;
     }
 }
