@@ -19,4 +19,7 @@ public class Guerrier extends Personnage {
     public void setBouclier(boolean bouclier) {
         this.bouclier = bouclier;
     }
+    public String toString() {
+        return super.toString() + "Arme : " + this.arme + "\n" + "Bouclier : "+ this.bouclier;
+    }
 }

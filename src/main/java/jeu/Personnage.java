@@ -39,6 +39,13 @@ public abstract class Personnage {
         this.attaque = attaque;
     }
 
+    public String toString() {
+        return "Nom : " + this.nom + "\n" +
+                "Image : " + this.img + "\n" +
+                "Vie : " + this.vie + "\n" +
+                "Attaque : " + this.attaque + "\n";
+
+    }
 
 
 }
