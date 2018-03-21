@@ -24,5 +24,17 @@ public class Magicien extends Personnage {
     public String toString() {
         return "MAGICIEN : " + "\n" + super.toString() + "Sort : " + this.sort + "\n" + "Philtre : " + this.philtre;
     }
-}
 
+    public Magicien(String nom, String img, int vie, int attaque, String sort, boolean philtre )
+    {
+        this.setNom(nom);
+        this.setImg(img);
+        this.setVie(vie);
+        this.setAttaque(attaque);
+        this.setSort(sort);
+        this.setPhiltre(philtre);
+
+    }
+
+
+}

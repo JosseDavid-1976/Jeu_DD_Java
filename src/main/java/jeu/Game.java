@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class Game {
     private static Guerrier guerrier;
     private static Magicien magicien;
-
+   private static ArrayList<Personnage> personnages = new ArrayList();
     ////////////////////////////////////////main/////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        ArrayList<Personnage> personnages = new ArrayList();
+
         boolean resteEnJeu = true;
         while (resteEnJeu) {
             System.out.println("Test de fonctionnement");
@@ -84,34 +84,39 @@ public class Game {
             guerrier.setBouclier(GuerrierBouclier);
             return guerrier;
         } else if (gOuM.equals("2")) {//////////////////creation magicien
-            magicien = new Magicien();
+
+//            magicien = new Magicien();
             System.out.println("Nom de votre Magicien  :");
-            String NomMagicien = sc.nextLine();
-            magicien.setNom(NomMagicien);
+            String nom = sc.nextLine();
+//            magicien.setNom(NomMagicien);
             System.out.println("<----------------------->");
             System.out.println("Image de votre Magicien  :");
-            String ImgMagicien = sc.nextLine();
-            magicien.setImg(ImgMagicien);
+            String img = sc.nextLine();
+//            magicien.setImg(ImgMagicien);
             System.out.println("<----------------------->");
             System.out.println("Niveau de vie de votre Magicien  :");
-            String VieMagicien = sc.nextLine();
-            int MagicienLife = Integer.parseInt(VieMagicien);
-            magicien.setVie(MagicienLife);
+            String life = sc.nextLine();
+            int vie = Integer.parseInt(life);
+//            magicien.setVie(MagicienLife);
             System.out.println("<----------------------->");
             System.out.println("Force de l'attaque de votre Magicien  :");
             String AttMagicien = sc.nextLine();
-            int MagicienAtt = Integer.parseInt(AttMagicien);
-            magicien.setAttaque(MagicienAtt);
+            int attaque = Integer.parseInt(AttMagicien);
+//            magicien.setAttaque(MagicienAtt);
             System.out.println("<----------------------->");
             System.out.println("Sort de votre Magicien  :");
-            String SortMagicien = sc.nextLine();
-            magicien.setSort(SortMagicien);
+            String sort = sc.nextLine();
+//            magicien.setSort(SortMagicien);
             System.out.println("Magicien équipé d'un philtre : true ou false ");
             String PhiltreMagicien = sc.nextLine();
-            boolean MagicienPhiltre = Boolean.valueOf(PhiltreMagicien);
-            magicien.setPhiltre(MagicienPhiltre);
-            return magicien;
-        } else {
+            boolean philtre = Boolean.valueOf(PhiltreMagicien);
+
+            Magicien mag = new Magicien(nom,img,vie,attaque,sort,philtre);
+            personnages.add(mag);
+//            magicien.setPhiltre(MagicienPhiltre);
+           return mag;
+
+                    } else {
             System.out.println("Deux type de personnages possible : Choisir 1 ou 2");
             return new Guerrier();
         }
