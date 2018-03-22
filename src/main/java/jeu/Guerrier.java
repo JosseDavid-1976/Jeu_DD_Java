@@ -22,7 +22,7 @@ public class Guerrier extends Personnage {
     }
 
     public String toString() {
-        return "GUERRIER : " + "\n" + super.toString() +  this.arme.toString();
+        return "GUERRIER : " + "\n" + super.toString() +  this.arme.toString() + "Bouclier : " + "\n" + this.bouclier;
     }
     public Guerrier(String nom, String img, int vie, int attaque, Armes arme, boolean bouclier ){
         this.setNom(nom);

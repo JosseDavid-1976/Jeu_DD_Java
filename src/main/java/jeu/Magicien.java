@@ -1,11 +1,12 @@
 package jeu;
 
 public class Magicien extends Personnage {
-    private String sort = "Pas encore de sort";
+    private String sortDeBase = "Pas encore de sort";
     private boolean philtre = true;
+    Sorts sort = new Sorts();
 
     public String getSort() {
-        return this.sort;
+        return this.sort.getNom();
     }
 
     public boolean getPhiltre() {
@@ -13,8 +14,8 @@ public class Magicien extends Personnage {
 
     }
 
-    public void setSort(String sort) {
-        this.sort = sort;
+    public void setSort(Sorts NouveauSort) {
+        this.sort = NouveauSort;
     }
 
     public void setPhiltre(boolean philtre) {
@@ -22,10 +23,10 @@ public class Magicien extends Personnage {
     }
 
     public String toString() {
-        return "MAGICIEN : " + "\n" + super.toString() + "Sort : " + this.sort + "\n" + "Philtre : " + this.philtre;
+        return "MAGICIEN : " + "\n" + super.toString()  + this.sort.toString() + "\n" + "Philtre : " + this.philtre;
     }
 
-    public Magicien(String nom, String img, int vie, int attaque, String sort, boolean philtre )
+    public Magicien(String nom, String img, int vie, int attaque, Sorts sort, boolean philtre )
     {
         this.setNom(nom);
         this.setImg(img);

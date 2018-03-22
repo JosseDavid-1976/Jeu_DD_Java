@@ -7,6 +7,7 @@ public class Game {
     private static Guerrier guerrier;
     private static Magicien magicien;
     private static Armes armes;
+    private static Sorts sorts;
    private static Scanner scannerInput = new Scanner(System.in);
 //    private static ArrayList<Personnage> personnages = new ArrayList();
 
@@ -37,13 +38,13 @@ public class Game {
                         System.out.println("Rentrez l'index du Guerrier à modifier :");
                         String ModGuer = sc.nextLine();
                         int GuerMod = Integer.parseInt(ModGuer);
-                        ModifierPersoG((Guerrier) (personnages.get(GuerMod)),(armes) );
+                        ModifierPersoG((Guerrier) (personnages.get(GuerMod)),(armes));
                         goMenu = false;
                     } else if (ChoixPerso.equals("3")) { // modifier Magicien
                         System.out.println("Rentrez l'index du Magicien à modifier :");
                         int ModGuer = sc.nextInt();
                         sc.nextLine();
-                        ModifierPersoM((Magicien) (personnages.get(ModGuer)));
+                        ModifierPersoM((Magicien) (personnages.get(ModGuer)),(sorts));
                         goMenu = false;
                     } else if (ChoixPerso.equals("4")) {
                         Attaquer();
@@ -114,12 +115,16 @@ public class Game {
             String AttMagicien = sc.nextLine();
             int attaque = Integer.parseInt(AttMagicien);
             System.out.println("<----------------------->");
-            System.out.println("Sort de votre Magicien  :");
-            String sort = sc.nextLine();
+            System.out.println("Nom du sort de votre Magicien  :");
+            String nomSort = sc.nextLine();
+            System.out.println("Puissance de sort de votre Magicien  :");
+            int puissance = scannerInput.nextInt();
+            sorts = new Sorts(nomSort,puissance);
+            System.out.println("<----------------------->");
             System.out.println("Magicien équipé d'un philtre : true ou false ");
             String PhiltreMagicien = sc.nextLine();
             boolean philtre = Boolean.valueOf(PhiltreMagicien);
-            Magicien mag = new Magicien(nom, img, vie, attaque, sort, philtre);
+            Magicien mag = new Magicien(nom, img, vie, attaque, sorts, philtre);
             personnages.add(mag);
             return mag;
         } else {
@@ -205,7 +210,7 @@ public class Game {
         }
     }
 
-    private static void ModifierPersoM(Magicien p) {//////////////////////////////modifier magicien
+    private static void ModifierPersoM(Magicien p,Sorts n) {//////////////////////////////modifier magicien
         Scanner sc = new Scanner(System.in);
         ArrayList<Personnage> personnages = new ArrayList();
         boolean modifierMago = true;
@@ -251,9 +256,17 @@ public class Game {
                     break;
                 case "5":
                     System.out.println("<----------------------->");
-                    System.out.println("Sortilége de votre Magicien  :");
-                    SortMagicien = sc.nextLine();
-                    p.setSort(SortMagicien);
+//                    System.out.println("Sortilége de votre Magicien  :");
+//                    SortMagicien = sc.nextLine();
+//                    p.setSort(SortMagicien);
+                    System.out.println("Nom du sort de votre Magicien  :");
+                    String nomSort = sc.nextLine();
+                    n.setNom(nomSort);
+                    System.out.println("Puissance du sort de votre Magicien :");
+                    int puissance = scannerInput.nextInt();
+                    n.setPuissance(puissance);
+                    sorts = new Sorts(nomSort,puissance);
+                    System.out.println("<----------------------->");
                     break;
                 case "6":
                     System.out.println("Magicien équipé d'un Philtre : true ou false ");
