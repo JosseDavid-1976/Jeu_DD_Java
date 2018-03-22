@@ -19,7 +19,18 @@ public class Guerrier extends Personnage {
     public void setBouclier(boolean bouclier) {
         this.bouclier = bouclier;
     }
+
     public String toString() {
         return "GUERRIER : " + "\n" + super.toString() + "Arme : " + this.arme + "\n" + "Bouclier : "+ this.bouclier;
     }
+    public Guerrier(String nom, String img, int vie, int attaque, String arme, boolean bouclier ){
+        this.setNom(nom);
+        this.setImg(img);
+        this.setVie(vie);
+        this.setAttaque(attaque);
+        this.setArme(arme);
+        this.setBouclier(bouclier);
+    }
+    public Guerrier(){}
+
 }
