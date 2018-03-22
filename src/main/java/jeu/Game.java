@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class Game {
     private static Guerrier guerrier;
     private static Magicien magicien;
+    private static Armes armes;
+   private static Scanner scannerInput = new Scanner(System.in);
 //    private static ArrayList<Personnage> personnages = new ArrayList();
 
     ////////////////////////////////////////main/////////////////////////////////////////////////////////////
@@ -35,7 +37,7 @@ public class Game {
                         System.out.println("Rentrez l'index du Guerrier à modifier :");
                         String ModGuer = sc.nextLine();
                         int GuerMod = Integer.parseInt(ModGuer);
-                        ModifierPersoG((Guerrier) (personnages.get(GuerMod)));
+                        ModifierPersoG((Guerrier) (personnages.get(GuerMod)),(armes) );
                         goMenu = false;
                     } else if (ChoixPerso.equals("3")) { // modifier Magicien
                         System.out.println("Rentrez l'index du Magicien à modifier :");
@@ -85,12 +87,16 @@ public class Game {
             String AttGuerrier = sc.nextLine();
             int attaque = Integer.parseInt(AttGuerrier);
             System.out.println("<----------------------->");
-            System.out.println("Arme de votre Guerrier  :");
-            String arme = sc.nextLine();
+            System.out.println("Nom de l'arme de votre Guerrier  :");
+            String nomArme = sc.nextLine();
+            System.out.println("Puissance de l'arme de votre Guerrier  :");
+            int puissance = scannerInput.nextInt();
+            armes = new Armes(nomArme,puissance);
+            System.out.println("<----------------------->");
             System.out.println("Guerrier équipé d'un bouclier : true ou false ");
             String BouclierGuerrier = sc.nextLine();
             boolean bouclier = Boolean.valueOf(BouclierGuerrier);
-            Guerrier guer = new Guerrier(nom, img, vie, attaque, arme, bouclier);
+            Guerrier guer = new Guerrier(nom, img, vie, attaque, armes, bouclier);
             personnages.add(guer);
             return guer;
         } else if (gOuM.equals("2")) {//////////////////creation magicien
@@ -124,7 +130,7 @@ public class Game {
 
     }
 
-    private static void ModifierPersoG(Guerrier p) {//////////////////////modifier guerrier
+    private static void ModifierPersoG(Guerrier p,Armes n) {//////////////////////modifier guerrier
         Scanner sc = new Scanner(System.in);
         ArrayList<Personnage> personnages = new ArrayList();
         boolean modifierPerso = true;
@@ -171,9 +177,17 @@ public class Game {
                     break;
                 case "5":
                     System.out.println("<----------------------->");
-                    System.out.println("Arme de votre Guerrier  :");
-                    ArmeGuerrier = sc.nextLine();
-                    p.setArme(ArmeGuerrier);
+//                    System.out.println("Arme de votre Guerrier  :");
+//                    ArmeGuerrier = sc.nextLine();
+//                    p.setArme(ArmeGuerrier);
+                    System.out.println("Nom de l'arme de votre Guerrier  :");
+                    String nomArme = sc.nextLine();
+                    n.setNom(nomArme);
+                    System.out.println("Puissance de l'arme de votre Guerrier  :");
+                    int puissance = scannerInput.nextInt();
+                    n.setPuissance(puissance);
+                    armes = new Armes(nomArme,puissance);
+                    System.out.println("<----------------------->");
                     break;
                 case "6":
                     System.out.println("Guerrier équipé d'un bouclier : true ou false ");

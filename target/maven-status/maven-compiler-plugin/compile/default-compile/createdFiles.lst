@@ -1,4 +1,5 @@
 jeu\Game.class
 jeu\Guerrier.class
 jeu\Magicien.class
+jeu\Armes.class
 jeu\Personnage.class

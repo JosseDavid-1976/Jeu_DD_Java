@@ -1,19 +1,20 @@
 package jeu;
 
 public class Guerrier extends Personnage {
-    private String arme = "Pas encore d'arme";
+    private String armeDeBase = "Pas encore d'arme";
     private boolean bouclier = true;
+    Armes arme = new Armes();
 
     public String getArme() {
-        return this.arme;
+        return this.arme.getNom();
     }
 
     public boolean getBouclier() {
         return this.bouclier;
     }
 
-    public void setArme(String arme) {
-        this.arme = arme;
+    public void setArme(Armes NouvelArme) {
+        this.arme = NouvelArme;
     }
 
     public void setBouclier(boolean bouclier) {
@@ -21,9 +22,9 @@ public class Guerrier extends Personnage {
     }
 
     public String toString() {
-        return "GUERRIER : " + "\n" + super.toString() + "Arme : " + this.arme + "\n" + "Bouclier : "+ this.bouclier;
+        return "GUERRIER : " + "\n" + super.toString() +  this.arme.toString();
     }
-    public Guerrier(String nom, String img, int vie, int attaque, String arme, boolean bouclier ){
+    public Guerrier(String nom, String img, int vie, int attaque, Armes arme, boolean bouclier ){
         this.setNom(nom);
         this.setImg(img);
         this.setVie(vie);
